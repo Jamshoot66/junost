@@ -2,12 +2,12 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Content
-import grades from '~/grades';
-import hintsOptions from '~/hints';
+import grades from './grades';
+import hintsOptions from './hints';
 
 // Components
-import Grades from '~/pages/grades';
-import OnboardingPopup from '~/components/onboardingPopup';
+import Grades from './pages/grades';
+import OnboardingPopup from './components/onboardingPopup';
 
 if (!window.Promise) {
   window.Promise = Promise;

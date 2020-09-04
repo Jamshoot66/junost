@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const githubUrl = 'https://github.com/anmedio/grades';
 
 // Components
-import SkillPopup from '~/components/skillPopup';
-import SoonPopup from '~/components/soonPopup';
-import OnboardingPopup from '~/components/onboardingPopup';
+import SkillPopup from '../../components/skillPopup';
+import SoonPopup from '../../components/soonPopup';
+import OnboardingPopup from '../../components/onboardingPopup';
 
 class Grades extends Component {
   static propTypes = {
