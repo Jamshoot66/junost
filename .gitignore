@@ -1,3 +1,13 @@
+#misc
 node_modules/
 src/no/
 .DS_Store
+yarn.lock
+package-lock.json
+
+#builds
+.next
+dist
+
+#IDEs
+.idea
