@@ -49,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^6.1.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.1",
     "gulp-autoprefixer": "^6.1.0",
@@ -78,12 +79,13 @@
     "@babel/polyfill": "^7.4.3",
     "bourbon-neat": "^3.0.1",
     "cross-env": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "js-levenshtein": "^1.1.6",
     "next": "^9.2.2",
     "promise-polyfill": "^8.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "whatwg-fetch": "^3.0.0",
-    "dotenv": "^8.2.0"
+    "whatwg-fetch": "^3.0.0"
   }
 }

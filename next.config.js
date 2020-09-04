@@ -4,7 +4,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 require("dotenv").config();
 
 module.exports = {
-  exportTrailingSlash: false,
+  trailingSlash: false,
 
   // eslint-disable-next-line
   exportPathMap: function() {
@@ -16,15 +16,7 @@ module.exports = {
   cssModules: true,
 
   env: {
-    API_URL: process.env.API_URL,
-    LANGUAGES: process.env.LANGUAGES,
-    UPLOADS: process.env.UPLOADS,
-    FLAGS: process.env.FLAGS,
-    FALLBACK_ICONS: process.env.FALLBACK_ICONS,
-    ONE_SIGNAL_ID: process.env.ONE_SIGNAL_ID,
-    ANALYTICS_GOOGLE_KEY: process.env.ANALYTICS_GOOGLE_KEY,
-    ANALYTICS_YANDEX_KEY: process.env.ANALYTICS_YANDEX_KEY,
-    ANALYTICS_AMPLITUDE_KEY: process.env.ANALYTICS_AMPLITUDE_KEY,
+    IS_DEBUG: process.env.NODE_ENV !== "production",
   },
 
   webpack: (config, { webpack }) => {
