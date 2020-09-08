@@ -18,11 +18,30 @@
       "depth": 3
     }],
     "prettier/prettier": "error",
-    "max-len": ["error", 80]
+    "max-len": ["error", 80],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "env": {
     "browser": true,
     "jquery": true
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
+    }
+  }
 }
+
