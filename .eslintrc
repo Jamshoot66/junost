@@ -5,10 +5,10 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".jsx"]
+        "extensions": [".jsx", "tsx"]
       }
     ],
-    "react/forbid-prop-types": [2, { "forbid": ['any'], "checkContextTypes": false, "checkChildContextTypes": false }],
+    "react/forbid-prop-types": [2, { "forbid": ["any"], "checkContextTypes": false, "checkChildContextTypes": false }],
     "react/no-danger": 0,
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/label-has-associated-control": [ 2, {
@@ -23,13 +23,6 @@
   "env": {
     "browser": true,
     "jquery": true
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack.config.js"
-      }
-    }
   },
   "parser": "babel-eslint"
 }

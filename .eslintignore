@@ -5,3 +5,6 @@ config/*
 view raw
 gulpfile.js
 src/react/components/form/data.js
+package.json
+next-env.d.ts
+tsconfig.json
