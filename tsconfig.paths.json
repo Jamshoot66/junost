@@ -5,7 +5,8 @@
       "components/*": ["src/components/*"],
       "package/*": ["src/package/*"],
       "utils/*": ["src/utils/*"],
-      "assets/*": ["src/assets/*"]
+      "assets/*": ["src/assets/*"],
+      "themes/*": ["src/themes/*"]
     }
   }
 }
