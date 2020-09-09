@@ -5,6 +5,7 @@ import {
   Title,
   GradeContainer,
   AddMoreButton,
+  SingleGradeContainer,
 } from "./GradesContainer.ui";
 
 class GradesContainer extends React.PureComponent {
@@ -14,6 +15,56 @@ class GradesContainer extends React.PureComponent {
       grades: [
         {
           label: "Junior",
+          skills: [
+            {
+              label: "Javascript",
+              description: "Javascript description",
+              links: ["google.com", "ya.ru"],
+            },
+            {
+              label: "Typescript",
+              description: "Typescript description",
+              links: ["google.com", "ya.ru"],
+            },
+          ],
+        },
+        {
+          label: "Middle",
+          skills: [
+            {
+              label: "Javascript",
+              description: "Javascript description",
+              links: ["google.com", "ya.ru"],
+            },
+            {
+              label: "Typescript",
+              description: "Typescript description",
+              links: ["google.com", "ya.ru"],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Frontend 2",
+      grades: [
+        {
+          label: "Junior",
+          skills: [
+            {
+              label: "Javascript",
+              description: "Javascript description",
+              links: ["google.com", "ya.ru"],
+            },
+            {
+              label: "Typescript",
+              description: "Typescript description",
+              links: ["google.com", "ya.ru"],
+            },
+          ],
+        },
+        {
+          label: "Middle",
           skills: [
             {
               label: "Javascript",
@@ -39,10 +90,14 @@ class GradesContainer extends React.PureComponent {
             <Title>{section.title}</Title>
 
             {section.grades?.map(grade => (
-              <Grade label={grade.label} skills={grade.skills} />
+              <SingleGradeContainer>
+                <Grade
+                  label={grade.label}
+                  skills={grade.skills}
+                  footer={<AddMoreButton>Добавить + </AddMoreButton>}
+                />
+              </SingleGradeContainer>
             ))}
-
-            <AddMoreButton>Добавить</AddMoreButton>
           </GradeContainer>
         ))}
       </Container>
