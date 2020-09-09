@@ -1,22 +1,35 @@
 import React from "react";
-import { Container, TitleContainer, Title } from "./PageHeader.ui";
+import FacebookLike from "components/FacebookLike";
+import {
+  Container,
+  TitleContainer,
+  Title,
+  DescriptionContainer,
+  Description,
+  Buttons,
+  About,
+  HowItWorks,
+  GitLink,
+} from "./PageHeader.ui";
 
-function PageHeader() {
+function PageHeader(): React.ReactElement {
   return (
     <Container>
       <TitleContainer>
         <Title>Джуность</Title>
-        <div id="fb-root" />
-        <div
-          data-href="https://anmedio.github.io/grades/"
-          data-width=""
-          data-layout="button_count"
-          data-action="like"
-          data-size="small"
-          data-show-faces="true"
-          data-share="false"
-        />
+        <FacebookLike />
       </TitleContainer>
+      <DescriptionContainer>
+        <Description>
+          Объективные грейды для развития специалистов сферы digital,
+          предложенные и развиваемые профессиональным сообществом.
+        </Description>
+        <Buttons>
+          <About>О проекте</About>
+          <HowItWorks>Как это работает?</HowItWorks>
+        </Buttons>
+      </DescriptionContainer>
+      <GitLink />
     </Container>
   );
 }
