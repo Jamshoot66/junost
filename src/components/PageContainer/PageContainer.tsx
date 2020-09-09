@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactElement;
 }
 
-function PageContainer(props: Props) {
+function PageContainer(props: Props): React.ReactElement {
   const { children } = props;
   return (
     <ThemeProvider theme={theme}>
