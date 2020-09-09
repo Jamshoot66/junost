@@ -4,6 +4,7 @@ src/no/
 .DS_Store
 yarn.lock
 package-lock.json
+*.log
 
 #builds
 .next
