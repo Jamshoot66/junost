@@ -34,7 +34,7 @@
     "browser": true,
     "jquery": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "settings": {
     "import/resolver": {
       "node": {
