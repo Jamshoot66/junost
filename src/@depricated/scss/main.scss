@@ -1,8 +1,8 @@
 @import 'neat';
 
-@import 'helpers/mixins', 'helpers/vars';
+@import '../../assets/styles/helpers/mixins', 'helpers/vars';
 
-@import 'base/grid', 'base/font-face', 'base/reset', 'base/general';
+@import 'base/grid', 'base/font-face', '../../assets/styles/helpers/reset', 'base/general';
 
 @import 'ui/buttons', 'ui/loader', 'ui/typography';
 
