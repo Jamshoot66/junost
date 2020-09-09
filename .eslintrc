@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:@typescript-eslint/recommended"],
   "plugins": ["react", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [
@@ -8,6 +8,8 @@
         "extensions": [".jsx", "tsx"]
       }
     ],
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1],
     "react/forbid-prop-types": [2, { "forbid": ["any"], "checkContextTypes": false, "checkChildContextTypes": false }],
     "react/no-danger": 0,
     "jsx-a11y/label-has-for": 0,
