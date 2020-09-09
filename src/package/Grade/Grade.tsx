@@ -8,10 +8,11 @@ interface Props {
     description: string;
     links: string[];
   }[];
+  footer?: React.ReactElement;
 }
 
 function Grade(props: Props): React.ReactElement {
-  const { label, skills } = props;
+  const { label, skills, footer } = props;
 
   return (
     <section className={styles.container}>
@@ -21,8 +22,13 @@ function Grade(props: Props): React.ReactElement {
           <div className={styles.skillBadge}>{skill.label}</div>
         ))}
       </div>
+      <footer>{footer}</footer>
     </section>
   );
 }
+
+Grade.defaultProps = {
+  footer: null,
+};
 
 export default Grade;
