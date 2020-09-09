@@ -20,7 +20,7 @@ export const TitleContainer = styled.header`
 
 export const Title = styled.span`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 3.2rem;
   line-height: 1.5;
   margin-bottom: 27px;
   color: ${({ theme }) => theme.colors.primary};
