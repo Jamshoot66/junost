@@ -25,6 +25,7 @@ function PageHeader(): React.ReactElement {
           предложенные и развиваемые профессиональным сообществом.
         </Description>
         <Buttons>
+          {/* TODO: Add about popup and HowItWorks logic */}
           <About>О проекте</About>
           <HowItWorks>Как это работает?</HowItWorks>
         </Buttons>
