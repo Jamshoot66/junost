@@ -9,6 +9,7 @@ package-lock.json
 #builds
 .next
 dist
+esm/*
 
 #IDEs
 .idea

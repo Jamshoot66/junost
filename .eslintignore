@@ -8,3 +8,4 @@ src/react/components/form/data.js
 package.json
 next-env.d.ts
 tsconfig.json
+esm/*
