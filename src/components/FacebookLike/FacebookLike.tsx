@@ -1,27 +1,21 @@
 import React from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { FacebookProvider, Like } from "react-facebook";
+import { JUNOST_FACEBOOK_ID, JUNOST_FACEBOOK_URL } from "utils/constants";
 
-interface Props {}
-
-interface State {}
-
-class FacebookLike extends React.PureComponent<Props, State> {
-  // TODO: add fb integration
-  render() {
-    return (
-      <React.Fragment>
-        <div id="fb-root" />
-        <div
-          data-href="https://anmedio.github.io/grades/"
-          data-width=""
-          data-layout="button_count"
-          data-action="like"
-          data-size="small"
-          data-show-faces="true"
-          data-share="false"
-        />
-      </React.Fragment>
-    );
-  }
+function FacebookLike(): React.ReactElement {
+  return (
+    <FacebookProvider appId={JUNOST_FACEBOOK_ID}>
+      <Like
+        href={JUNOST_FACEBOOK_URL}
+        colorScheme="dark"
+        showFaces
+        layout="button_count"
+        size="small"
+      />
+    </FacebookProvider>
+  );
 }
 
 export default FacebookLike;
