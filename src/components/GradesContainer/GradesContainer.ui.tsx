@@ -18,9 +18,11 @@ export const Title = styled.header`
 
   margin: 47px 37px 24px 0;
   padding: 7px 7px 7px 0;
+  display: flex;
+  align-items: center;
 `;
 
-export const AddMoreButton = styled.button`
+export const AddMoreButton = styled.a`
   margin-top: auto;
   position: relative;
   padding: 9px 12px;
@@ -35,4 +37,20 @@ export const AddMoreButton = styled.button`
 export const SingleGradeContainer = styled.div`
   width: 395px;
   margin-right: 35px;
+`;
+
+export const PlusIcon = styled.div`
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const VerticalPlaceholder = styled.div`
+  height: 20px;
 `;
