@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./Grade.module.scss";
 
+type Skill = {
+  label: string;
+  isMastered?: boolean;
+  descriptionHeader?: string;
+  description: string;
+  links: string[];
+};
+
 interface Props {
   label: string;
-  skills: {
-    label: string;
-    isMastered?: boolean;
-    descriptionHeader?: string;
-    description: string;
-    links: string[];
-  }[];
+  skills: Skill[];
   footer?: React.ReactElement;
 }
 
