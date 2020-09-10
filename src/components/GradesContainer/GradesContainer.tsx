@@ -1,5 +1,5 @@
 import React from "react";
-import Grade from "package/Grade";
+import Grade, { Skill } from "package/Grade";
 import { JUNOST_GIT_ISSUES_URL } from "utils/constants";
 import {
   Container,
@@ -23,6 +23,11 @@ class GradesContainer extends React.PureComponent<never, State> {
     isCollapsed: true,
   };
 
+  skillEventHandler = (event: React.MouseEvent, skill: Skill): void => {
+    console.log(event.target);
+    console.log(skill);
+  };
+
   render(): React.ReactElement {
     const { isCollapsed } = this.state;
     return (
@@ -39,6 +44,7 @@ class GradesContainer extends React.PureComponent<never, State> {
                 <Grade
                   label={grade.label}
                   skills={grade.skills}
+                  onClick={this.skillEventHandler}
                   footer={
                     <React.Fragment>
                       <VerticalPlaceholder />
