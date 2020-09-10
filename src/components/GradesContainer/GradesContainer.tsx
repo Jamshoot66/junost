@@ -1,5 +1,5 @@
 import React from "react";
-import Grade, { Skill, Props as GradeProps } from "package/Grade";
+import Grade, { Skill } from "package/Grade";
 import { JUNOST_GIT_ISSUES_URL } from "utils/constants";
 import {
   Container,
@@ -11,16 +11,7 @@ import {
   VerticalPlaceholder,
 } from "./GradesContainer.ui";
 import { mockedGradeSections } from "./mockData";
-
-type GradeSection = {
-  title: string;
-  isCollapsed: boolean;
-  grades: GradeProps[];
-};
-
-interface State {
-  gradeSections: GradeSection[];
-}
+import { GradeSection, State } from "./GradesContainer.types";
 
 class GradesContainer extends React.PureComponent<never, State> {
   state: State = {
@@ -55,13 +46,16 @@ class GradesContainer extends React.PureComponent<never, State> {
       <Container>
         {gradeSections?.map(section => (
           <GradeContainer isCollapsed={section.isCollapsed}>
-            <Title onClick={() => this.toggleCollapse(section)}>
+            <Title
+              isCollapsed={section.isCollapsed}
+              onClick={() => this.toggleCollapse(section)}
+            >
               <PlusIcon> {section.isCollapsed ? "+" : "-"}</PlusIcon>
               {section.title}
             </Title>
 
             {section.grades?.map(grade => (
-              <SingleGradeContainer>
+              <SingleGradeContainer isCollapsed={section.isCollapsed}>
                 <Grade
                   label={grade.label}
                   skills={grade.skills}

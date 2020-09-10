@@ -1,52 +1,70 @@
 import styled from "styled-components";
 import is from "typescript-styled-is";
+import { Collapsable } from "./GradesContainer.types";
 
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-interface GradeContainerProps {
-  isCollapsed?: boolean;
-}
-
-export const GradeContainer = styled.div<GradeContainerProps>`
+export const GradeContainer = styled.div<Collapsable>`
   position: relative;
   display: flex;
-  padding: 50px 0;
-  max-height: 100vh;
+  margin: 50px 0;
+  max-height: 1000vh;
+  will-change: contents, height, max-height;
   transition: 0.25s ease;
 
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    opacity: 0;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+    left: 0;
+    pointer-events: visible;
+    background: linear-gradient(to top, #fff 20%, rgba(255, 255, 255, 0));
+  }
+
   ${is("isCollapsed")`
-    max-height: 200px;
+    max-height: 120px;
     overflow: hidden;
     
     &:after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 30%;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to top, #fff 40%, rgba(255, 255, 255, 0));
+      display: block;
+      opacity: 1;
     }
   `}
 `;
 
 export const TitleContainer = styled.div``;
 
-export const Title = styled.header`
+export const Title = styled.header<Collapsable>`
   font-weight: bold;
   font-size: 2rem;
 
-  margin: 47px 37px 24px 0;
-  padding: 7px 7px 7px 0;
+  margin: 47px 37px 0 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  align-self: stretch;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+  transform: translateY(0);
+  will-change: transform;
+
+  ${is("isCollapsed")`
+    transform: translateY(-30px);
+  `}
 `;
 
 export const AddMoreButton = styled.a`
   margin-top: auto;
+  display: inline-block;
   position: relative;
   padding: 9px 12px;
   border-radius: 3px;
@@ -57,9 +75,17 @@ export const AddMoreButton = styled.a`
   background: ${({ theme }) => theme.colors.primary};
 `;
 
-export const SingleGradeContainer = styled.div`
+export const SingleGradeContainer = styled.div<Collapsable>`
   width: 395px;
   margin-right: 35px;
+
+  transition: 0.25s ease;
+  transform: translateY(0);
+  will-change: transform;
+
+  ${is("isCollapsed")`
+    transform: translateY(-30px);
+  `}
 `;
 
 export const PlusIcon = styled.div`
