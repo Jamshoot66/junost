@@ -15,29 +15,9 @@ export const GradeContainer = styled.div<Collapsable>`
   will-change: contents, height, max-height;
   transition: 0.25s ease;
 
-  &:after {
-    content: "";
-    position: absolute;
-    display: none;
-    opacity: 0;
-    width: 100%;
-    height: 65%;
-    bottom: 0;
-    left: 0;
-    pointer-events: visible;
-    background: linear-gradient(to top, #fff 20%, rgba(255, 255, 255, 0));
-  }
-
   ${is("isCollapsed")`
     max-height: 120px;
     overflow: hidden;
-    
-    &:after {
-      content: "";
-      position: absolute;
-      display: block;
-      opacity: 1;
-    }
   `}
 `;
 
@@ -102,4 +82,41 @@ export const PlusIcon = styled.div`
 
 export const VerticalPlaceholder = styled.div`
   height: 20px;
+`;
+
+export const Background = styled.div<Collapsable>`
+  position: relative;
+  width: 100vw;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 65%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+    background: linear-gradient(to top, #fff 20%, rgba(255, 255, 255, 0));
+  }
+
+  &:nth-child(2n) {
+    background: ${({ theme }) => theme.colors.greyLight};
+
+    &:after {
+      background: linear-gradient(
+        to top,
+        ${({ theme }) => theme.colors.greyLight} 20%,
+        rgba(255, 255, 255, 0)
+      );
+    }
+  }
+
+  ${is("isCollapsed")`   
+    &:after {
+      display: block;
+      background: linear-gradient(to top, #fff 20%, rgba(255, 255, 255, 0));
+    }
+  `}
 `;

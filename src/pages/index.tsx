@@ -1,5 +1,4 @@
 import React from "react";
-import PageContainer from "components/PageContainer";
 import PageHeader from "components/PageHeader";
 import GradesContainer from "components/GradesContainer";
 
@@ -13,10 +12,10 @@ class Index extends React.Component {
 
   render(): React.ReactElement {
     return (
-      <PageContainer>
+      <React.Fragment>
         <PageHeader />
         <GradesContainer />
-      </PageContainer>
+      </React.Fragment>
     );
   }
 }
