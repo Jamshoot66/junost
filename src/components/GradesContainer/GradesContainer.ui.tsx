@@ -1,13 +1,36 @@
 import styled from "styled-components";
+import is from "typescript-styled-is";
 
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-export const GradeContainer = styled.div`
+interface GradeContainerProps {
+  isCollapsed?: boolean;
+}
+
+export const GradeContainer = styled.div<GradeContainerProps>`
+  position: relative;
   display: flex;
   padding: 50px 0;
+  max-height: 100vh;
+  transition: 0.25s ease;
+
+  ${is("isCollapsed")`
+    max-height: 200px;
+    overflow: hidden;
+    
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, #fff 40%, rgba(255, 255, 255, 0));
+    }
+  `}
 `;
 
 export const TitleContainer = styled.div``;

@@ -28,8 +28,25 @@ class GradesContainer extends React.PureComponent<never, State> {
   };
 
   skillEventHandler = (event: React.MouseEvent, skill: Skill): void => {
+    // eslint-disable-next-line no-console
     console.log(event.target);
+    // eslint-disable-next-line no-console
     console.log(skill);
+  };
+
+  toggleCollapse = (gradeSection: GradeSection): void => {
+    const { gradeSections } = this.state;
+    const newGradeSectionIndex = gradeSections.findIndex(
+      item => item.title === gradeSection.title
+    );
+
+    const newGradeSection = {
+      ...gradeSection,
+      isCollapsed: !gradeSection.isCollapsed,
+    };
+    const newGradeSections = gradeSections.slice(0);
+    newGradeSections[newGradeSectionIndex] = newGradeSection;
+    this.setState({ gradeSections: newGradeSections });
   };
 
   render(): React.ReactElement {
@@ -37,8 +54,8 @@ class GradesContainer extends React.PureComponent<never, State> {
     return (
       <Container>
         {gradeSections?.map(section => (
-          <GradeContainer>
-            <Title>
+          <GradeContainer isCollapsed={section.isCollapsed}>
+            <Title onClick={() => this.toggleCollapse(section)}>
               <PlusIcon> {section.isCollapsed ? "+" : "-"}</PlusIcon>
               {section.title}
             </Title>
