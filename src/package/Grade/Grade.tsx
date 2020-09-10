@@ -5,6 +5,8 @@ interface Props {
   label: string;
   skills: {
     label: string;
+    isMastered?: boolean;
+    descriptionHeader?: string;
     description: string;
     links: string[];
   }[];
@@ -18,9 +20,14 @@ function Grade(props: Props): React.ReactElement {
     <section className={styles.container}>
       <header className={styles.title}>{label}</header>
       <div>
-        {skills?.map(skill => (
-          <div className={styles.skillBadge}>{skill.label}</div>
-        ))}
+        {skills?.map(
+          (skill): React.ReactElement => {
+            const badgeStyles = [styles.skillBadge];
+            if (skill.isMastered) badgeStyles.push(styles.skillBadge__mastered);
+
+            return <div className={badgeStyles.join(" ")}>{skill.label}</div>;
+          }
+        )}
       </div>
       <footer>{footer}</footer>
     </section>

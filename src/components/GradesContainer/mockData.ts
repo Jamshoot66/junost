@@ -8,6 +8,7 @@ export const mockedGradeSections = [
         skills: [
           {
             label: "Javascript",
+            isMastered: true,
             description: "Javascript description",
             links: ["google.com", "ya.ru"],
           },
