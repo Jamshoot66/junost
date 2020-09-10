@@ -13,10 +13,11 @@ interface Props {
   label: string;
   skills: Skill[];
   footer?: React.ReactElement;
+  onClick?: (event: React.MouseEvent, skillData: Skill) => void;
 }
 
 function Grade(props: Props): React.ReactElement {
-  const { label, skills, footer } = props;
+  const { label, skills, footer, onClick } = props;
 
   return (
     <section className={styles.container}>
@@ -26,8 +27,18 @@ function Grade(props: Props): React.ReactElement {
           (skill): React.ReactElement => {
             const badgeStyles = [styles.skillBadge];
             if (skill.isMastered) badgeStyles.push(styles.skillBadge__mastered);
+            if (onClick) badgeStyles.push(styles.skillBadge__clickable);
 
-            return <div className={badgeStyles.join(" ")}>{skill.label}</div>;
+            return (
+              <button
+                type="button"
+                role={onClick ? "button" : "note"}
+                className={badgeStyles.join(" ")}
+                onClick={event => onClick?.(event, skill)}
+              >
+                {skill.label}
+              </button>
+            );
           }
         )}
       </div>
@@ -38,6 +49,7 @@ function Grade(props: Props): React.ReactElement {
 
 Grade.defaultProps = {
   footer: null,
+  onClick: null,
 };
 
 export default Grade;
