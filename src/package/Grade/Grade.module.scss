@@ -20,9 +20,13 @@
 	margin-bottom: 15px;
 	border-radius: 3px;
 	line-height: 1;
-	cursor: pointer;
+	cursor: default;
 
 	&__mastered {
 		background-color: #fce463;
+	}
+
+	&__clickable {
+		cursor: pointer;
 	}
 }
