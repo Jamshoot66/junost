@@ -1,1 +1,1 @@
-export { default } from "./Grade";
+export { default } from "./Grade.hoc";
