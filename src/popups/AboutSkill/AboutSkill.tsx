@@ -33,7 +33,11 @@ function AboutSkill({
         <UI.LinksHeader>Ссылки на материалы</UI.LinksHeader>
         <UI.LinksList>
           {links?.map(link => (
-            <UI.Link href={link.href} key={`${link.label}_${link.href}`}>
+            <UI.Link
+              href={link.href}
+              target="_blank"
+              key={`${link.label}_${link.href}`}
+            >
               {link.label}
               <UI.LinkIcon />
             </UI.Link>
