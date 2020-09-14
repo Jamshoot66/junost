@@ -23,7 +23,7 @@ export const Background = styled.div`
 
 export const PopupContainer = styled.section`
   position: relative;
-  padding: 30px 20px 20px;
+  padding: 40px;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
 `;
@@ -39,9 +39,9 @@ const line = `
 `;
 
 export const CloseButton = styled.button`
-  width: 15px;
-  height: 15px;
-  margin: 7px;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
   position: absolute;
   top: 0;
   right: 0;
