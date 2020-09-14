@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "components/*": ["src/components/*"],
+      "popups/*": ["src/popups/*"],
       "package/*": ["src/package/*"],
       "utils/*": ["src/utils/*"],
       "assets/*": ["src/assets/*"],
