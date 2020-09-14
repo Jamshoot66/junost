@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeader from "components/PageHeader";
 import GradesContainer from "components/GradesContainer";
+import ModalManager from "components/ModalManager";
 
 class Index extends React.Component {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
@@ -13,6 +14,9 @@ class Index extends React.Component {
   render(): React.ReactElement {
     return (
       <React.Fragment>
+        <ModalManager>
+          <div> some content test</div>
+        </ModalManager>
         <PageHeader />
         <GradesContainer />
       </React.Fragment>
