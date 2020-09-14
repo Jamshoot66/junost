@@ -30,7 +30,7 @@ export const PopupContainer = styled.section`
 
 const line = `
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: black;
   position: absolute;
   top: 50%;
@@ -39,9 +39,9 @@ const line = `
 `;
 
 export const CloseButton = styled.button`
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  width: 15px;
+  height: 15px;
+  margin: 7px;
   position: absolute;
   top: 0;
   right: 0;
