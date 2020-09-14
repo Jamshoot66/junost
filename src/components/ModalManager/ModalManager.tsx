@@ -16,7 +16,10 @@ class ModalManager extends React.PureComponent<Props, State> {
     const { children } = this.props;
     return (
       <UI.Container>
-        <UI.PopupContainer>{children}</UI.PopupContainer>
+        <UI.PopupContainer>
+          <UI.CloseButton />
+          {children}
+        </UI.PopupContainer>
       </UI.Container>
     );
   }
