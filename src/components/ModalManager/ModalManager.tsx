@@ -5,19 +5,34 @@ interface Props {
   children: React.ReactNode;
 }
 
-interface State {}
+interface State {
+  isShown: boolean;
+}
 
 class ModalManager extends React.PureComponent<Props, State> {
   static defaultProps: Props = {
     children: false,
   };
 
-  render(): React.ReactElement {
+  state: State = {
+    isShown: true,
+  };
+
+  hideEvent = (): void => {
+    this.setState({ isShown: false });
+  };
+
+  render(): React.ReactNode {
     const { children } = this.props;
+    const { isShown } = this.state;
+
+    if (!isShown) return false;
+
     return (
       <UI.Container>
+        <UI.Background onClick={this.hideEvent} />
         <UI.PopupContainer>
-          <UI.CloseButton />
+          <UI.CloseButton onClick={this.hideEvent} />
           {children}
         </UI.PopupContainer>
       </UI.Container>
