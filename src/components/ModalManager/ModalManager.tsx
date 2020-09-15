@@ -18,6 +18,19 @@ class ModalManager extends React.PureComponent<Props, State> {
     isShown: true,
   };
 
+  componentDidMount(): void {
+    this.updateBodyScroll();
+  }
+
+  componentDidUpdate(): void {
+    this.updateBodyScroll();
+  }
+
+  updateBodyScroll = (): void => {
+    const { isShown } = this.state;
+    document.body.style.overflowY = isShown ? "hidden" : "";
+  };
+
   hideEvent = (): void => {
     this.setState({ isShown: false });
   };

@@ -26,6 +26,8 @@ export const PopupContainer = styled.section`
   padding: 40px;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
+  overflow-y: auto;
+  max-height: 100%;
 `;
 
 const line = `
