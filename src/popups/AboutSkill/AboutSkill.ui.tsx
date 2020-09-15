@@ -80,10 +80,16 @@ export const LinkIcon = styled.div`
   margin-left: 10px;
 `;
 
-export const HeaderComponent = ({ caption, isMastered }: HeaderProps) => (
+export const HeaderComponent = ({
+  caption,
+  isMastered,
+  onMasteredClick,
+}: HeaderProps): React.ReactElement => (
   <HeaderContainer>
     <Header>{caption}</Header>
-    <MasteredButton isMastered={isMastered}>Я это знаю</MasteredButton>
+    <MasteredButton isMastered={isMastered} onClick={onMasteredClick}>
+      Я это знаю
+    </MasteredButton>
   </HeaderContainer>
 );
 
@@ -94,7 +100,7 @@ export const ContentComponent = ({
   <React.Fragment>
     <Description>{description}</Description>
     <LinksContainer>
-      {links?.length > 0 && (
+      {(links?.length ?? 0) > 0 && (
         <React.Fragment>
           <LinksHeader>Ссылки на материалы</LinksHeader>
           <LinksList>

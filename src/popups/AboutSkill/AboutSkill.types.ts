@@ -7,6 +7,7 @@ export interface Masterable {
 export interface HeaderProps {
   caption: React.ReactNode;
   isMastered: boolean;
+  onMasteredClick: () => void;
 }
 
 export type Link = {
