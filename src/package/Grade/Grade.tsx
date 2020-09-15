@@ -17,6 +17,7 @@ function Grade(props: Props): React.ReactElement {
 
             return (
               <button
+                key={`${skill.label}_${skill.description}`}
                 type="button"
                 role={onClick ? "button" : "note"}
                 className={badgeStyles.join(" ")}

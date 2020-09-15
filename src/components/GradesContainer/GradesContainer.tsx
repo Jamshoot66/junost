@@ -47,7 +47,7 @@ class GradesContainer extends React.PureComponent<unknown, State> {
     return (
       <Container>
         {gradeSections?.map(section => (
-          <Background isCollapsed={section.isCollapsed}>
+          <Background key={section.title} isCollapsed={section.isCollapsed}>
             <PageContainer>
               <GradeContainer isCollapsed={section.isCollapsed}>
                 <Title
@@ -59,7 +59,10 @@ class GradesContainer extends React.PureComponent<unknown, State> {
                 </Title>
 
                 {section.grades?.map(grade => (
-                  <SingleGradeContainer isCollapsed={section.isCollapsed}>
+                  <SingleGradeContainer
+                    key={grade.label}
+                    isCollapsed={section.isCollapsed}
+                  >
                     <Grade
                       label={grade.label}
                       skills={grade.skills}
