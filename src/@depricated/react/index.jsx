@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// Content
+// Description
 import grades from './grades';
 import hintsOptions from './hints';
 

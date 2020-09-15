@@ -1,5 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 import is from "typescript-styled-is";
+import { Masterable, HeaderProps, ContentProps } from "./AboutSkill.types";
 import LinkIconImage from "./link.svg";
 
 export const Container = styled.section`
@@ -10,21 +12,12 @@ export const Container = styled.section`
 
 export const HeaderContainer = styled.header`
   display: flex;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
-  padding-bottom: 13px;
-  margin-bottom: 17px;
-  position: relative;
-  padding-right: 25px;
 `;
 
 export const Header = styled.h2`
   font-size: 2rem;
   font-weight: bold;
 `;
-
-type Masterable = {
-  isMastered: boolean;
-};
 
 export const MasteredButton = styled.button<Masterable>`
   position: relative;
@@ -74,7 +67,7 @@ export const Link = styled.a`
   font-weight: bold;
   display: flex;
   border-radius: 3px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   padding: 6px 12px;
   line-height: 1;
   margin-bottom: 15px;
@@ -86,3 +79,42 @@ export const LinkIcon = styled.div`
   height: 1.4rem;
   margin-left: 10px;
 `;
+
+export const HeaderComponent = ({ caption, isMastered }: HeaderProps) => (
+  <HeaderContainer>
+    <Header>{caption}</Header>
+    <MasteredButton isMastered={isMastered}>Я это знаю</MasteredButton>
+  </HeaderContainer>
+);
+
+export const ContentComponent = ({
+  description,
+  links,
+}: ContentProps): React.ReactElement => (
+  <React.Fragment>
+    <Description>{description}</Description>
+    <LinksContainer>
+      {links?.length > 0 && (
+        <React.Fragment>
+          <LinksHeader>Ссылки на материалы</LinksHeader>
+          <LinksList>
+            {links?.map(link => (
+              <Link
+                href={link.href}
+                target="_blank"
+                key={`${link.label}_${link.href}`}
+              >
+                {link.label}
+                <LinkIcon />
+              </Link>
+            ))}
+          </LinksList>
+        </React.Fragment>
+      )}
+    </LinksContainer>
+  </React.Fragment>
+);
+
+ContentComponent.defaultProps = {
+  links: [],
+};

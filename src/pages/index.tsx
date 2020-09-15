@@ -3,6 +3,36 @@ import PageHeader from "components/PageHeader";
 import GradesContainer from "components/GradesContainer";
 import ModalManager from "components/ModalManager";
 
+import About from "popups/About";
+import AboutProject from "popups/AboutProject";
+import AboutSkill from "popups/AboutSkill";
+
+const testAbout: React.ReactNode = (
+  <About
+    header="Computer science"
+    description="Основы программирования и Computer Science -
+    это те самые фундаментальные знания, которые необходимы каждому,
+    кто хочет стать настоящим инженером, ведь нужно не просто знать,
+    как писать код, но и понимать, как этот код работает сейчас и
+    будет работать при других условиях."
+    isMastered
+    links={[
+      {
+        label: "Легендарный гарвардский курс CS50",
+        href: "https://google.com",
+      },
+      {
+        label: "google",
+        href: "https://google.com",
+      },
+      {
+        label: "Легендарный гарвардский курс CS52",
+        href: "https://google.com",
+      },
+    ]}
+  />
+);
+
 class Index extends React.Component {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     // eslint-disable-next-line no-console
@@ -15,7 +45,7 @@ class Index extends React.Component {
     return (
       <React.Fragment>
         <ModalManager>
-          <div> some content test</div>
+          <AboutSkill />
         </ModalManager>
         <PageHeader />
         <GradesContainer />

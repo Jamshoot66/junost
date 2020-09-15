@@ -1,34 +1,33 @@
 import React from "react";
+import About from "popups/About";
 import * as UI from "./AboutSkill.ui";
 
-type Link = {
-  label: string;
-  href: string;
-};
+interface Props {}
 
-interface Props {
-  header: string;
-  description: string;
-  isMastered: boolean;
-  links: Link[];
+function AboutSkill(props: Props): React.ReactNode {
+  // return <About header={<Header />} content={<ContentComponent />} />;
+  return (
+    <About
+      header={<UI.HeaderComponent caption={"test"} isMastered={true} />}
+      content={<UI.ContentComponent description={"test descr"} />}
+    />
+  );
 }
 
-function AboutSkill({
-  header,
-  description,
-  isMastered,
-  links,
-}: Props): React.ReactElement {
-  return (
+export default AboutSkill;
+
+/*
     <UI.Container>
       <UI.HeaderContainer>
         <UI.Header>{header}</UI.Header>
-        <UI.MasteredButton isMastered={isMastered}>
-          Я это знаю
-        </UI.MasteredButton>
+        {masterable && (
+          <UI.MasteredButton isMastered={isMastered || false}>
+            Я это знаю
+          </UI.MasteredButton>
+        )}
       </UI.HeaderContainer>
       <br />
-      <UI.Description>{description}</UI.Description>
+      <UI.ContentComponent>{content}</UI.ContentComponent>
       <UI.LinksContainer>
         <UI.LinksHeader>Ссылки на материалы</UI.LinksHeader>
         <UI.LinksList>
@@ -45,7 +44,4 @@ function AboutSkill({
         </UI.LinksList>
       </UI.LinksContainer>
     </UI.Container>
-  );
-}
-
-export default AboutSkill;
+ */
