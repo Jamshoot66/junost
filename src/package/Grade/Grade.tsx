@@ -11,7 +11,7 @@ function Grade(props: Props): React.ReactElement {
       <div>
         {skills?.map(
           (skill: Skill): React.ReactElement => {
-            const badgeStyles = [styles.skillBadge];
+            const badgeStyles = ["qa-skillBadge", styles.skillBadge];
             if (skill.isMastered) badgeStyles.push(styles.skillBadge__mastered);
             if (onClick) badgeStyles.push(styles.skillBadge__clickable);
 

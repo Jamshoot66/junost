@@ -34,6 +34,7 @@ module.exports = {
         /\.(js|mjs|jsx|ts|tsx)$/,
         /\.html$/,
         /\.json$/,
+        /\.css$/,
         sassRegex,
         sassModuleRegex,
       ],

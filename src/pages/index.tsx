@@ -2,13 +2,14 @@ import React from "react";
 import PageHeader from "components/PageHeader";
 import GradesContainer from "components/GradesContainer";
 import ModalManager from "components/ModalManager";
+import ProjectTour from "components/ProjectTour";
 
 import About from "popups/About";
 import AboutProject from "popups/AboutProject";
 import AboutSkill from "popups/AboutSkill";
 
 const testAbout: React.ReactNode = (
-  <About
+  <AboutSkill
     header="Computer science"
     description="Основы программирования и Computer Science -
     это те самые фундаментальные знания, которые необходимы каждому,
@@ -44,9 +45,8 @@ class Index extends React.Component {
   render(): React.ReactElement {
     return (
       <React.Fragment>
-        <ModalManager>
-          <AboutSkill />
-        </ModalManager>
+        <ProjectTour />
+        <ModalManager>{testAbout}</ModalManager>
         <PageHeader />
         <GradesContainer />
       </React.Fragment>

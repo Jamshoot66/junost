@@ -15,7 +15,7 @@ class ModalManager extends React.PureComponent<Props, State> {
   };
 
   state: State = {
-    isShown: true,
+    isShown: false,
   };
 
   componentDidMount(): void {

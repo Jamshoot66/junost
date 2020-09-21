@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
 import React from "react";
 import "assets/styles/global.scss";
+import "intro.js/introjs.css";
 import theme from "themes/mainTheme";
 import { ThemeProvider } from "styled-components";
 
